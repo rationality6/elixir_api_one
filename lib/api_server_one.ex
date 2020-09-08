@@ -1,17 +1,18 @@
 defmodule ApiServerOne do
-  @moduledoc """
-  Documentation for `ApiServerOne`.
-  """
+  use Plug.Router
 
-  @doc """
-  Hello world.
+  plug :match
+  plug :dispatch
 
-  ## Examples
+  get "/users/:name" do
+    conn
+    |> put_resp_content_type("application/json")
+    |> send_resp(200, Poison.encode!(%{:name => name}))
+  end
 
-      iex> ApiServerOne.hello()
-      :world
-
-  """
+  match _ do
+    send_resp(conn, 404,"oops")
+  end
 
   def init(options) do
       options
