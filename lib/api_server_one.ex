@@ -12,6 +12,15 @@ defmodule ApiServerOne do
       :world
 
   """
+
+  def init(options) do
+      options
+  end
+
+  def call(conn,_opts)do
+    Plug.Conn.send_resp(conn,200,"Hello, Elixir!")
+  end
+
   def hello do
     :world
   end
