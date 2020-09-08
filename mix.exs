@@ -14,7 +14,8 @@ defmodule ApiServerOne.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger,:plug,:poison]
+      extra_applications: [:logger,:plug,:poison,:cowboy],mod:
+      {ApiServerOne,[]}
     ]
   end
 

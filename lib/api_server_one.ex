@@ -14,6 +14,10 @@ defmodule ApiServerOne do
     send_resp(conn, 404,"oops")
   end
 
+  def start(_type,_args) do
+    Plug.Adapters.Cowboy.http(__MODULE__,[])
+  end
+
   def init(options) do
       options
   end
