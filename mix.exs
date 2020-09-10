@@ -14,8 +14,8 @@ defmodule ApiServerOne.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger,:plug,:poison,:cowboy],mod:
-      {ApiServerOne,[]}
+      extra_applications: [:logger, :plug, :poison, :cowboy],
+      mod: {ApiServerOne, []}
     ]
   end
 
@@ -23,7 +23,7 @@ defmodule ApiServerOne.MixProject do
   defp deps do
     [
       {:cowboy, "~> 2.8.0"},
-      {:plug_cowboy,"~>2.3.0"},
+      {:plug_cowboy, "~>2.3.0"},
       {:poison, "~> 4.0.1"}
 
       # {:dep_from_hexpm, "~> 0.3.0"},
